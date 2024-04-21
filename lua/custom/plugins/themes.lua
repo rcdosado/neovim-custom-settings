@@ -1,4 +1,16 @@
 return {
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true, opts = {} },
+  { 'sainnhe/gruvbox-material', name = 'gruvbox-material' },
+  { 'EdenEast/nightfox.nvim' },
+  { 'sainnhe/everforest' },
+  { 'ishan9299/nvim-solarized-lua' },
+  { 'Mofiqul/dracula.nvim' },
+  {
+    'Alexis12119/nightly.nvim',
+    lazy = false,
+    priority = 1000,
+  },
   {
     'eldritch-theme/eldritch.nvim',
     lazy = false,
@@ -12,9 +24,6 @@ return {
     'craftzdog/solarized-osaka.nvim',
     lazy = false,
     priority = 1000,
-    opts = {
-      transparent = true,
-    },
   },
   {
     -- You can easily change to a different colorscheme.

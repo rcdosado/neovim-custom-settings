@@ -16,7 +16,7 @@ local options = {
   ignorecase = true, -- Case insensitive searching
   laststatus = 3, -- globalstatus
   lazyredraw = true, -- lazily redraw screen
-  mouse = 'a', -- Enable mouse support
+  -- mouse = 'a', -- Enable mouse support
   timeoutlen = 300, -- Length of time to wait for a mapped sequence
   undofile = true, -- Enable persistent undo
   updatetime = 250, -- Length of time to wait before triggering the plugin
@@ -105,7 +105,8 @@ vim.keymap.set('n', '<leader>tln', '<cmd>set nu!<cr>', { nowait = true, desc = '
 vim.keymap.set('n', '<leader>trn', '<cmd>set rnu!<cr>', { nowait = true, desc = 'Toggle Relative number' })
 vim.keymap.set('n', '<leader>tlc', '<cmd>set list!<cr>', { nowait = true, desc = 'Show/Hide listchars' })
 vim.keymap.set('n', '<leader>tat', '<cmd>AerialToggle!<CR>', { desc = 'Toggle aerial' })
-vim.keymap.set('n', '<leader>tci', '<cmd>CodeiumToggle<cr>', { nowait = true, desc = 'Codeium Toggle' })
+vim.keymap.set('n', '<leader>tci', '<cmd>CodeiumToggle<cr>', { nowait = true, desc = 'Toggle Codeium' })
+vim.keymap.set('n', '<leader>trp', '<cmd>TransparentToggle<cr>', { nowait = true, desc = 'Toggle Transparency' })
 -- LEAP
 vim.keymap.set('n', 's', '<Plug>(leap)')
 vim.keymap.set('n', 'gs', '<Plug>(leap-from-window)')

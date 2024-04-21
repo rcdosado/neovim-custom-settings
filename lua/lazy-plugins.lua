@@ -68,6 +68,8 @@ require('lazy').setup({
   -- require 'custom/plugins/persistence',
   require 'custom/plugins/persisted',
 
+  require 'custom/plugins/transparent-nvim',
+
   -- require 'custom/plugins/ollama-nvim',
 
   -- require 'custom/plugins/llm',

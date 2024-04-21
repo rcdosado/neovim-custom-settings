@@ -110,8 +110,8 @@ return {
             },
             -- extension specific config
             enable_previewer = true, -- (boolean) -> show/hide previewer window
-            enable_live_preview = false, -- (boolean) -> enable/disable live preview
-            ignore = { 'default', 'desert', 'elflord', 'habamax' },
+            enable_live_preview = true, -- (boolean) -> enable/disable live preview
+            -- ignore = { 'default', 'desert', 'elflord', 'habamax' },
             -- (table) -> provide table of theme names to ignore
             -- all builtin themes are ignored by default
             persist = {
@@ -132,23 +132,28 @@ return {
       pcall(require('telescope').load_extension, 'persisted')
       pcall(require('telescope').load_extension, 'themes')
 
+      -- SHORTCUTS
+
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-      vim.keymap.set('n', '<leader>th', '<cmd>Telescope themes<cr>', { desc = 'swi[T]ch t[H]emes' })
       -- vim.keymap.set('n', '<leader>th', builtin.colorscheme, { desc = 'Switch [t][h]emes' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-      vim.keymap.set('n', '<leader>sW', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-      vim.keymap.set('n', '<leader>s,', ":lua require('telescope').extensions.frecency.frecency()<CR>", { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader>se', '<cmd>Telescope persisted<cr>', { desc = '[S]earch s[E]ssions' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
+      -- NON BUILT-IN
+
+      vim.keymap.set('n', '<leader>th', '<cmd>Telescope themes<cr>', { desc = 'swi[T]ch t[H]emes' })
+      vim.keymap.set('n', '<leader>s,', ":lua require('telescope').extensions.frecency.frecency()<CR>", { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>sW', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+      vim.keymap.set('n', '<leader>se', '<cmd>Telescope persisted<cr>', { desc = '[S]earch s[E]ssions' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()

@@ -245,12 +245,12 @@ return {
 
   -- COLOR SCHEMES
   -- color_scheme = "Builtin Solarized Dark",
-  -- color_scheme = "Obsidian",
+  -- color_scheme = 'Obsidian',
   -- color_scheme = "Gruvbox Dark",
   -- color_scheme = "OneHalfDark",
   -- color_scheme = "Batman",
   -- color_scheme = "Dracula",
-  color_scheme = 'Dark Violet (base16)',
+  -- color_scheme = 'Dark Violet (base16)',
   -- color_scheme = default_color_scheme,
   -- color_scheme = 'Night Owl (Gogh)',
 
@@ -265,19 +265,20 @@ return {
   tab_max_width = 32,
 
   -- image background enable start -----------------------------
-  -- window_background_opacity = 1,
-  -- -- window_background_image = 'c:/tools/wallpapers/img24.jpg',
-  -- -- window_background_image = 'c:/tools/wallpapers/img35.jpg',
-  -- window_background_image = 'c:/tools/wallpapers/img21.jpg',
-  -- window_background_image_hsb = {
-  --   -- brightness = 1.0,
-  --   -- brightness = 0.5,
-  --   -- brightness = 0.3,
-  --   brightness = 0.08,
-  --   -- brightness = 0.05,
-  --   hue = 1.0,
-  --   saturation = 1.0,
-  -- },
+  -- window_background_opacity = 0.85,
+  -- text_background_opacity = 0.3,
+  -- win32_acrylic_accent_color = '#2b2042',
+  -- win32_acrylic_accent_color = '#11111B',
+  -- win32_system_backdrop = 'Acrylic',
+  -- window_background_image = 'c:/tools/wallpapers/img24.jpg',
+  -- window_background_image = 'c:/tools/wallpapers/img35.jpg',
+  window_background_image = 'c:/tools/wallpapers/img21.jpg',
+  window_background_image_hsb = {
+    brightness = 0.02,
+    -- brightness = 0.05,
+    hue = 1.0,
+    saturation = 1.0,
+  },
   -- image background enable end -------------------------------
   -- leaf
   use_fancy_tab_bar = false,

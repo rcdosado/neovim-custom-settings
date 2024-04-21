@@ -70,6 +70,10 @@ require('lazy').setup({
 
   require 'custom/plugins/transparent-nvim',
 
+  require 'custom/plugins/markdown-preview',
+
+  require 'custom/plugins/nvim-tree',
+
   -- require 'custom/plugins/ollama-nvim',
 
   -- require 'custom/plugins/llm',

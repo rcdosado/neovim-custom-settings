@@ -1,1 +1,1 @@
-vim.cmd("colorscheme minicyan")
+vim.cmd("colorscheme dayfox")

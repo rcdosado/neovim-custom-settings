@@ -3,10 +3,6 @@ return {
     'eldritch-theme/eldritch.nvim',
     lazy = false,
     priority = 1000,
-    init = function()
-      -- vim.cmd.colorscheme 'eldritch'
-      -- vim.cmd.hi 'Comment gui=none'
-    end,
     opts = {
       transparent = true,
       terminal_colors = true,
@@ -16,10 +12,6 @@ return {
     'craftzdog/solarized-osaka.nvim',
     lazy = false,
     priority = 1000,
-    init = function ()
-      vim.cmd.colorscheme 'solarized-osaka'
-      vim.cmd.hi 'Comment gui=none'
-    end,
     opts = {
       transparent = true,
     },
@@ -49,8 +41,6 @@ return {
           floats = 'dark', -- style for floating windows
         },
       }
-      -- vim.cmd.colorscheme 'tokyonight-moon'
-      -- vim.cmd.hi 'Comment gui=none'
     end,
   },
   {

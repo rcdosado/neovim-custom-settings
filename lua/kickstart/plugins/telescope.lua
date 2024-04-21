@@ -35,8 +35,11 @@ return {
         -- For major updates, this must be adjusted manually.
         version = '^1.0.0',
       },
+      -- {
+      --   'nvim-telescope/telescope-frecency.nvim',
+      -- },
       {
-        'nvim-telescope/telescope-frecency.nvim',
+        'andrew-george/telescope-themes',
       },
     },
     config = function()
@@ -96,6 +99,28 @@ return {
           persisted = {
             layout_config = { width = 0.25, height = 0.55 },
           },
+          themes = {
+            -- you can add regular telescope config
+            -- that you want to apply on this picker only
+            layout_config = {
+              horizontal = {
+                width = 0.8,
+                height = 0.7,
+              },
+            },
+            -- extension specific config
+            enable_previewer = true, -- (boolean) -> show/hide previewer window
+            enable_live_preview = false, -- (boolean) -> enable/disable live preview
+            ignore = { 'default', 'desert', 'elflord', 'habamax' },
+            -- (table) -> provide table of theme names to ignore
+            -- all builtin themes are ignored by default
+            persist = {
+              enabled = true, -- enable persisting last theme choice
+
+              -- override path to file that execute colorscheme command
+              path = vim.fn.stdpath 'config' .. '/lua/current-theme.lua',
+            },
+          },
         },
       }
 
@@ -105,11 +130,13 @@ return {
       pcall(require('telescope').load_extension, 'live_grep_args')
       pcall(require('telescope').load_extension, 'frecency')
       pcall(require('telescope').load_extension, 'persisted')
+      pcall(require('telescope').load_extension, 'themes')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-      vim.keymap.set('n', '<leader>th', builtin.colorscheme, { desc = 'Switch [t][h]emes' })
+      vim.keymap.set('n', '<leader>th', '<cmd>Telescope themes<cr>', { desc = 'swi[T]ch t[H]emes' })
+      -- vim.keymap.set('n', '<leader>th', builtin.colorscheme, { desc = 'Switch [t][h]emes' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
@@ -118,8 +145,8 @@ return {
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-      vim.keymap.set('n', '<leader>s.', ":lua require('telescope').extensions.frecency.frecency()<CR>", { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader>s,', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>s,', ":lua require('telescope').extensions.frecency.frecency()<CR>", { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader>se', '<cmd>Telescope persisted<cr>', { desc = '[S]earch s[E]ssions' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 

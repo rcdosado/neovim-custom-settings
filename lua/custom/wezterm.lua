@@ -265,19 +265,19 @@ return {
   tab_max_width = 32,
 
   -- image background enable start -----------------------------
-  window_background_opacity = 1,
-  -- window_background_image = 'c:/tools/wallpapers/img24.jpg',
-  -- window_background_image = 'c:/tools/wallpapers/img35.jpg',
-  window_background_image = 'c:/tools/wallpapers/img21.jpg',
-  window_background_image_hsb = {
-    -- brightness = 1.0,
-    -- brightness = 0.5,
-    -- brightness = 0.3,
-    brightness = 0.08,
-    -- brightness = 0.05,
-    hue = 1.0,
-    saturation = 1.0,
-  },
+  -- window_background_opacity = 1,
+  -- -- window_background_image = 'c:/tools/wallpapers/img24.jpg',
+  -- -- window_background_image = 'c:/tools/wallpapers/img35.jpg',
+  -- window_background_image = 'c:/tools/wallpapers/img21.jpg',
+  -- window_background_image_hsb = {
+  --   -- brightness = 1.0,
+  --   -- brightness = 0.5,
+  --   -- brightness = 0.3,
+  --   brightness = 0.08,
+  --   -- brightness = 0.05,
+  --   hue = 1.0,
+  --   saturation = 1.0,
+  -- },
   -- image background enable end -------------------------------
   -- leaf
   use_fancy_tab_bar = false,

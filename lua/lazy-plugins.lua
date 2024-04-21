@@ -1,4 +1,4 @@
--- [[ Configure and install plugins ]]
+﻿-- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
 --    :Lazy
@@ -40,13 +40,37 @@ require('lazy').setup({
 
   require 'kickstart/plugins/cmp',
 
-  require 'kickstart/plugins/tokyonight',
-
   require 'kickstart/plugins/todo-comments',
 
   require 'kickstart/plugins/mini',
 
   require 'kickstart/plugins/treesitter',
+
+  require 'custom/plugins/nvim-window',
+
+  require 'custom/plugins/leap',
+
+  require 'custom/plugins/harpoon',
+
+  require 'custom/plugins/aerial',
+
+  require 'custom/plugins/themes',
+
+  require 'custom/plugins/toggle-diagnostics',
+
+  require 'custom/plugins/lexima',
+
+  require 'custom/plugins/codeium-vim',
+
+  -- require 'custom/plugins/bufferline',
+  require 'custom/plugins/dashboard-nvim',
+
+  -- require 'custom/plugins/persistence',
+  require 'custom/plugins/persisted',
+
+  -- require 'custom/plugins/ollama-nvim',
+
+  -- require 'custom/plugins/llm',
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -58,7 +82,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`

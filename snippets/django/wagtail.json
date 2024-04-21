@@ -1,0 +1,25 @@
+
+{
+    "purl": {
+        "prefix": "purl",
+        "body": [
+            "Copyright (c) ${CURRENT_YEAR} ${0:Author}. All Rights Reserved."
+        ],
+        "description": "Snippet to put copyright"
+    },
+    "idx": {
+        "prefix": "idx",
+        "body": "${UUID}",
+        "description": "A Version 4 UUID"
+    },
+    "blok": {
+        "prefix": "blok",
+        "description": "blok tag django template",
+        "body": [
+            "{% block $1 %}",
+            "$2",
+            "{% endblock $1 %}"
+        ]
+    }
+}
+

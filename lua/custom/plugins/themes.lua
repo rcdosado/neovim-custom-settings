@@ -6,6 +6,19 @@ return {
   { 'sainnhe/everforest' },
   { 'ishan9299/nvim-solarized-lua' },
   { 'Mofiqul/dracula.nvim' },
+  { 'rebelot/kanagawa.nvim' },
+  { 'kvrohit/substrata.nvim' },
+  { 'romainl/Apprentice' },
+  { 'hauleth/blame.vim' },
+  { 'cocopon/iceberg.vim' },
+  {
+    'navarasu/onedark.nvim',
+    config = function()
+      require('onedark').setup {
+        style = 'darker',
+      }
+    end,
+  },
   {
     'Alexis12119/nightly.nvim',
     lazy = false,
@@ -16,7 +29,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = true,
+      transparent = false,
       terminal_colors = true,
     },
   },

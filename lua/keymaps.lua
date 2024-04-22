@@ -107,6 +107,11 @@ vim.keymap.set('n', '<leader>tlc', '<cmd>set list!<cr>', { nowait = true, desc =
 vim.keymap.set('n', '<leader>tat', '<cmd>AerialToggle!<CR>', { desc = 'Toggle aerial' })
 vim.keymap.set('n', '<leader>tci', '<cmd>CodeiumToggle<cr>', { nowait = true, desc = 'Toggle Codeium' })
 vim.keymap.set('n', '<leader>trp', '<cmd>TransparentToggle<cr>', { nowait = true, desc = 'Toggle Transparency' })
+vim.keymap.set('n', '<leader>tac', function()
+  local flag = require('cmp.config').get().enabled
+  require('cmp').setup.buffer { enabled = not flag }
+end, { nowait = true, desc = 'Toggle Autocomplete' })
+
 -- LEAP
 vim.keymap.set('n', 's', '<Plug>(leap)')
 vim.keymap.set('n', 'gs', '<Plug>(leap-from-window)')

@@ -62,10 +62,12 @@ require('lazy').setup({
 
   require 'custom/plugins/codeium-vim',
 
-  -- require 'custom/plugins/bufferline',
+  require 'custom/plugins/bufferline',
+
   require 'custom/plugins/dashboard-nvim',
 
-  -- require 'custom/plugins/persistence',
+  require 'custom/plugins/nvim-tree',
+
   require 'custom/plugins/persisted',
 
   require 'custom/plugins/transparent-nvim',

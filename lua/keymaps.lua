@@ -86,6 +86,7 @@ vim.keymap.set('n', '<leader>ed', '<cmd>tabnew c:/Users/RAG/Desktop/downloads.tx
 
 vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
 vim.keymap.set('n', '<leader>e', '<cmd>lua MiniFiles.open()<CR>', { desc = 'open mini.files' })
+vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
 vim.keymap.set('n', '<leader>X', '<cmd>%bd! | e#<cr>', { desc = ' Close buffers except current' })
 vim.keymap.set('n', '<leader>x', '<cmd>bd!<cr>', { desc = 'Close current buffer' })
 -- ["<leader>q"] = { "<cmd>%bd! | e#<cr>", "Close buffers except current", opts = { nowait = true, silent=true} },

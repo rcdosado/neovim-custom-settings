@@ -24,6 +24,7 @@ return {
       vim.keymap.set('n', '<ESC>', api.tree.close, opts 'Close Menu')
       vim.keymap.set('n', 'l', api.node.open.edit, opts 'Open directory')
       vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts 'Close directory')
+      vim.cmd 'hi NvimTreeNormal guibg=NONE ctermbg=NONE'
     end
     require('nvim-tree').setup {
       on_attach = my_on_attach,

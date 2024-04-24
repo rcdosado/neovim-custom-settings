@@ -270,11 +270,9 @@ return {
   -- win32_acrylic_accent_color = '#2b2042',
   -- win32_acrylic_accent_color = '#11111B',
   -- win32_system_backdrop = 'Acrylic',
-  -- window_background_image = 'c:/tools/wallpapers/img24.jpg',
-  -- window_background_image = 'c:/tools/wallpapers/img35.jpg',
-  window_background_image = 'c:/tools/wallpapers/img21.jpg',
+  window_background_image = os.getenv 'USERPROFILE' .. '/AppData/Local/nvim/rsrc/bg/img60.png' or '',
   window_background_image_hsb = {
-    brightness = 0.02,
+    brightness = 0.09,
     -- brightness = 0.05,
     hue = 1.0,
     saturation = 1.0,

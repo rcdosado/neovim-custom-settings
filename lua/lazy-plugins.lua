@@ -72,6 +72,8 @@ require('lazy').setup({
 
   require 'custom/plugins/transparent-nvim',
 
+  require 'custom/plugins/nvim-bufdel',
+
   -- require 'custom/plugins/ollama-nvim',
 
   -- require 'custom/plugins/llm',

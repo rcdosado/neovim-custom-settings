@@ -11,6 +11,7 @@ return {
   { 'romainl/Apprentice' },
   { 'hauleth/blame.vim' },
   { 'cocopon/iceberg.vim' },
+  { 'LunarVim/darkplus.nvim' },
   {
     'navarasu/onedark.nvim',
     config = function()

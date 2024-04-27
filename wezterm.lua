@@ -254,9 +254,10 @@ return {
   -- color_scheme = "OneHalfDark",
   -- color_scheme = "Batman",
   -- color_scheme = "Dracula",
-  color_scheme = 'Dark Violet (base16)',
+  -- color_scheme = 'Dark Violet (base16)',
   -- color_scheme = default_color_scheme,
   -- color_scheme = 'Night Owl (Gogh)',
+  -- color_scheme = 'tokyonight_day',
 
   default_cursor_style = 'BlinkingUnderline', -- SteadyBlock, SteadyBar, BlinkingBlock,
   -- BlinkingBar, SteadyUnderline, BlinkingUnderline

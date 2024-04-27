@@ -245,7 +245,7 @@ return {
 
   -- COLOR SCHEMES
   -- color_scheme = "Builtin Solarized Dark",
-  color_scheme = 'Obsidian',
+  -- color_scheme = 'Obsidian',
   -- color_scheme = "Gruvbox Dark",
   -- color_scheme = "OneHalfDark",
   -- color_scheme = "Batman",
@@ -253,7 +253,7 @@ return {
   -- color_scheme = 'Dark Violet (base16)',
   -- color_scheme = default_color_scheme,
   -- color_scheme = 'Night Owl (Gogh)',
-  -- color_scheme = 'tokyonight-day',
+  -- color_scheme = 'tokyonight_day',
 
   default_cursor_style = 'BlinkingUnderline', -- SteadyBlock, SteadyBar, BlinkingBlock,
   -- BlinkingBar, SteadyUnderline, BlinkingUnderline
@@ -275,7 +275,7 @@ return {
   -- window_background_image = 'c:/tools/wallpapers/img35.jpg',
   window_background_image = 'c:/tools/wallpapers/img21.jpg',
   window_background_image_hsb = {
-    brightness = 0.02,
+    brightness = 0.05,
     -- brightness = 0.05,
     hue = 1.0,
     saturation = 1.0,

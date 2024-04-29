@@ -12,6 +12,8 @@ return {
   { 'hauleth/blame.vim' },
   { 'cocopon/iceberg.vim' },
   { 'LunarVim/darkplus.nvim' },
+  { 'yeddaif/neovim-purple' },
+  { 'scottmckendry/cyberdream.nvim' },
   {
     'navarasu/onedark.nvim',
     config = function()
@@ -38,6 +40,10 @@ return {
     'craftzdog/solarized-osaka.nvim',
     lazy = false,
     priority = 1000,
+    opts = {
+      transparent = false,
+      terminal_colors = true,
+    },
   },
   {
     -- You can easily change to a different colorscheme.

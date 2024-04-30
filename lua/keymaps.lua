@@ -60,6 +60,13 @@ vim.keymap.set('i', '<C-o>', '<Esc>o', { desc = 'Explicitly go to next line' })
 vim.keymap.set('i', '<M-h>', '<BS>', { desc = '<Backspace>' })
 vim.keymap.set('i', '<M-l>', '<Del>', { desc = '<Delete>' })
 
+-- delete without yanking
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+
+-- move to underscores with - and l (repeatable with ";")
+vim.keymap.set({ 'n', 'v' }, '<leader>-', 'f_', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>l', 'F_', { silent = true })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -80,8 +87,9 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', 'QQ', '<cmd>qall!<cr>', { nowait = true, desc = 'quit, dont save' })
 
 -- quick edit keymaps
-vim.keymap.set('n', '<leader>ev', '<cmd>tabnew ~/AppData/Local/nvim/lua/keymaps.lua<CR>', { silent = true })
-vim.keymap.set('n', '<leader>ew', '<cmd>tabnew ~/AppData/Local/nvim/lua/custom/wezterm.lua<CR>', { silent = true })
+vim.keymap.set('n', '<leader>ekm', '<cmd>tabnew ~/AppData/Local/nvim/lua/keymaps.lua<CR>', { silent = true })
+vim.keymap.set('n', '<leader>epi', '<cmd>tabnew ~/AppData/Local/nvim/lua/lazy-plugins.lua<CR>', { silent = true })
+vim.keymap.set('n', '<leader>ewt', '<cmd>tabnew ~/AppData/Local/nvim/lua/custom/wezterm.lua<CR>', { silent = true })
 vim.keymap.set('n', '<leader>ed', '<cmd>tabnew c:/Users/RAG/Desktop/downloads.txt<CR>', { silent = true })
 
 vim.keymap.set('n', '<leader>e', '<cmd>lua MiniFiles.open()<CR>', { desc = 'open mini.files' })
@@ -112,38 +120,6 @@ vim.keymap.set('n', '<leader>tac', function()
   local flag = require('cmp.config').get().enabled
   require('cmp').setup.buffer { enabled = not flag }
 end, { nowait = true, desc = 'Toggle Autocomplete' })
-
--- Neotest
-vim.keymap.set('n', '<leader>ntf', function()
-  require('neotest').run.run(vim.fn.expand '%')
-end, { desc = 'Run File' })
-
-vim.keymap.set('n', '<leader>nta', function()
-  require('neotest').run.run(vim.loop.cwd())
-end, { desc = 'Run All Test Files' })
-
-vim.keymap.set('n', '<leader>ntt', function()
-  require('neotest').run.run()
-end, { desc = 'Run Nearest' })
-
-vim.keymap.set('n', '<leader>nss', function()
-  require('neotest').summary.toggle()
-end, { desc = 'Toggle Summary' })
-
-vim.keymap.set('n', '<leader>nso', function()
-  require('neotest').output.open { enter = true, auto_close = true }
-end, { desc = 'Show Output' })
-
-vim.keymap.set('n', '<leader>nsp', function()
-  require('neotest').output_panel.toggle()
-end, { desc = 'Toggle Output Panel' })
-
-vim.keymap.set('n', '<leader>ntx', function()
-  require('neotest').run.stop()
-end, { desc = 'Stop' })
-
-vim.keymap.set('n', '[n', '<cmd>lua require("neotest").jump.prev({status = "failed"})<CR>', { silent = true })
-vim.keymap.set('n', ']n', '<cmd>lua require("neotest").jump.next({status = "failed"})<CR>', { silent = true })
 
 -- LEAP
 vim.keymap.set('n', 's', '<Plug>(leap)')

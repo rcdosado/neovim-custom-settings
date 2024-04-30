@@ -1,4 +1,4 @@
-local options = {
+﻿local options = {
   hlsearch = true, -- Set highlight on search, but clear on pressing <Esc> in normal mode
   backspace = vim.opt.backspace + { 'nostop' }, -- Don't stop backspace at insert
   swapfile = false,
@@ -60,6 +60,13 @@ vim.keymap.set('i', '<C-o>', '<Esc>o', { desc = 'Explicitly go to next line' })
 vim.keymap.set('i', '<M-h>', '<BS>', { desc = '<Backspace>' })
 vim.keymap.set('i', '<M-l>', '<Del>', { desc = '<Delete>' })
 
+-- delete without yanking
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+
+-- move to underscores with - and l (repeatable with ";")
+vim.keymap.set({ 'n', 'v' }, '<leader>-', 'f_', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>l', 'F_', { silent = true })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -80,8 +87,9 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', 'QQ', '<cmd>qall!<cr>', { nowait = true, desc = 'quit, dont save' })
 
 -- quick edit keymaps
-vim.keymap.set('n', '<leader>ev', '<cmd>tabnew ~/AppData/Local/nvim/lua/keymaps.lua<CR>', { silent = true })
-vim.keymap.set('n', '<leader>ew', '<cmd>tabnew ~/AppData/Local/nvim/lua/custom/wezterm.lua<CR>', { silent = true })
+vim.keymap.set('n', '<leader>ekm', '<cmd>tabnew ~/AppData/Local/nvim/lua/keymaps.lua<CR>', { silent = true })
+vim.keymap.set('n', '<leader>epi', '<cmd>tabnew ~/AppData/Local/nvim/lua/lazy-plugins.lua<CR>', { silent = true })
+vim.keymap.set('n', '<leader>ewt', '<cmd>tabnew ~/AppData/Local/nvim/lua/custom/wezterm.lua<CR>', { silent = true })
 vim.keymap.set('n', '<leader>ed', '<cmd>tabnew c:/Users/RAG/Desktop/downloads.txt<CR>', { silent = true })
 
 vim.keymap.set('n', '<leader>e', '<cmd>lua MiniFiles.open()<CR>', { desc = 'open mini.files' })

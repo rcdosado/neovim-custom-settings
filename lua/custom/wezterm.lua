@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+
 local initial_cwd = 'c:/dev/'
 -- Given "/foo/bar" returns "bar"
 -- Given "c:\\foo\\bar" returns "bar"
@@ -123,25 +124,13 @@ return {
   -- https://wezfurlong.org/wezterm/config/default-keys.html
   keys = {
     -- create new tab pane
-    { key = 'RightArrow', mods = 'ALT', action = wezterm.action { SplitPane = { direction = 'Right', command = { args = {} }, size = { Percent = 30 } } } },
-    { key = 'DownArrow', mods = 'ALT', action = wezterm.action { SplitPane = { direction = 'Down', command = { args = {} }, size = { Percent = 25 } } } },
+    { key = 'l', mods = 'ALT', action = wezterm.action { SplitPane = { direction = 'Right', command = { args = {} }, size = { Percent = 30 } } } },
+    { key = 'j', mods = 'ALT', action = wezterm.action { SplitPane = { direction = 'Down', command = { args = {} }, size = { Percent = 25 } } } },
 
     -- switch between tabs
     { key = 'Tab', mods = 'CTRL', action = wezterm.action { ActivateTabRelative = 1 } },
     { key = 'Tab', mods = 'CTRL|SHIFT', action = wezterm.action { ActivateTabRelative = -1 } },
 
-    -- close a tab / window
-    -- {key="`", mods="LEADER",action=wezterm.action{CloseCurrentPane={confirm=false}}},
-    { key = 'z', mods = 'CTRL|ALT', action = wezterm.action { CloseCurrentPane = { confirm = false } } },
-    {
-      key = 'F11',
-      mods = '',
-      action = wezterm.action {
-        SpawnCommandInNewTab = {
-          -- cwd = initial_cwd
-        },
-      },
-    },
     -- paste from the clipboard
     { key = 'V', mods = 'CTRL', action = wezterm.action { PasteFrom = 'Clipboard' } },
 
@@ -157,12 +146,24 @@ return {
     { key = 'k', mods = 'CTRL|ALT', action = wezterm.action { AdjustPaneSize = { 'Up', 5 } } },
     { key = 'l', mods = 'CTRL|ALT', action = wezterm.action { AdjustPaneSize = { 'Right', 5 } } },
 
+    -- close/open a new wezterm window
+    { key = '_', mods = 'CTRL|SHIFT', action = wezterm.action { CloseCurrentPane = { confirm = false } } },
+    {
+      key = '+',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action {
+        SpawnCommandInNewTab = {
+          -- cwd = initial_cwd
+        },
+      },
+    },
+
     -- Set default key for font size shortcuts
     { key = '-', mods = 'CTRL|ALT', action = 'DecreaseFontSize' },
     { key = '=', mods = 'CTRL|ALT', action = 'IncreaseFontSize' },
 
     -- switch to full screen
-    { key = 'F12', mods = '', action = 'ToggleFullScreen' },
+    { key = '\r', mods = 'ALT', action = 'ToggleFullScreen' },
 
     { key = '1', mods = 'ALT', action = wezterm.action { ActivateTab = 0 } },
     { key = '2', mods = 'ALT', action = wezterm.action { ActivateTab = 1 } },
@@ -184,10 +185,10 @@ return {
   font_rasterizer = 'FreeType',
   -- font_antialias = "Greyscale",  -- None, Grayscale, Subpixel
   -- font_hinting = "Full",  -- None, Vertical, VerticalSubpixel, Full
-  -- font = wezterm.font("Monofur Nerd Font", {weight="Regular", stretch="Normal", style="Normal"}),
+  -- font = wezterm.font('Monofur Nerd Font', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("OperatorMono Nerd Font", {weight=325, stretch="Normal", italic=false}),
   -- font = wezterm.font("Iosevka Nerd Font", {weight="Light", stretch="Normal", style="Normal"}),
-  -- font = wezterm.font("Iosevka Nerd Font", {weight="Regular", stretch="Normal", style="Normal"}),
+  -- font = wezterm.font('Iosevka Nerd Font', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("Iosevka Nerd Font", {weight="Medium", stretch="Normal", style="Normal"}),
   -- font = wezterm.font("Iosevka Nerd Font", {weight="Bold", stretch="Normal", style="Normal"}),
   -- font = wezterm.font("IntelOne Mono", {weight="Light", stretch="Normal", style="Normal"}), font = wezterm.font("IntelOne Mono", {weight="Light", stretch="Normal", style="Italic"}), font = wezterm.font("IntelOne Mono", {weight="Regular", stretch="Normal", style="Normal"}), font = wezterm.font("IntelOne Mono", {weight="Regular", stretch="Normal", style="Italic"}), font = wezterm.font("IntelOne Mono", {weight="Medium", stretch="Normal", style="Normal"}),
@@ -213,12 +214,12 @@ return {
   -- font = wezterm.font("FantasqueSansMono NF", {weight="Bold", stretch="Normal", style="Normal"}),
   -- font = wezterm.font("FantasqueSansMono NF", {weight="Bold", stretch="Normal", style="Italic"}),
   -- font = wezterm.font("FiraCode NF", {weight="Light", stretch="Normal", style="Normal"}),
-  -- font = wezterm.font("FiraCode NF", {weight="Regular", stretch="Normal", style="Normal"}),
-  -- font = wezterm.font("FiraCode NF", {weight=450, stretch="Normal", style="Normal"}),
-  -- font = wezterm.font("FiraCode NF", {weight="Medium", stretch="Normal", style="Normal"}),
+  -- font = wezterm.font('FiraCode NF', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
+  -- font = wezterm.font('FiraCode NF', { weight = 450, stretch = 'Normal', style = 'Normal' }),
+  -- font = wezterm.font('FiraCode NF', { weight = 'Medium', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("FiraCode NF", {weight="DemiBold", stretch="Normal", style="Normal"}),
   -- font = wezterm.font("FiraCode NF", {weight="Bold", stretch="Normal", style="Normal"}),
-  -- font = wezterm.font("JuliaMono", {weight="Regular", stretch="Normal", style="Normal"}),
+  font = wezterm.font('JuliaMono', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font('ComicMono NF', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("ComicMono NF", {weight="Regular", stretch="Normal", style="Normal"}),
   -- font = wezterm.font("Comic Code Ligatures", {weight=250, stretch="Normal", style="Normal"}),
@@ -229,16 +230,16 @@ return {
   -- font = wezterm.font("Comic Code Ligatures", {weight="Light", stretch="Normal", style="Italic"}),
   -- font = wezterm.font('Comic Code Ligatures', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("Comic Code Ligatures", {weight="Regular", stretch="Normal", style="Italic"}),
-  font = wezterm.font('Comic Code Ligatures', { weight = 'Medium', stretch = 'Normal', style = 'Normal' }),
+  -- font = wezterm.font('Comic Code Ligatures', { weight = 'Medium', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("Comic Code Ligatures", {weight="Medium", stretch="Normal", style="Italic"}),
   -- font = wezterm.font("Comic Code Ligatures", {weight="DemiBold", stretch="Normal", style="Normal"}),
   -- font = wezterm.font("Comic Code Ligatures", {weight="DemiBold", stretch="Normal", style="Italic"}),
   -- font = wezterm.font("Comic Code Ligatures", {weight="Bold", stretch="Normal", style="Normal"}),
   -- font = wezterm.font("Comic Code Ligatures", {weight="Bold", stretch="Normal", style="Italic"}),
 
-  -- font = wezterm.font("MonoLisa Static-NoScript", {weight="Regular", stretch="Normal", style="Normal"}),
-  -- font = wezterm.font("MonoLisa Static-NoScript", {weight="Regular", stretch="Normal", style="Italic"}),
-  -- font = wezterm.font("MonoLisa Static-NoScript", {weight="Medium", stretch="Normal", style="Normal"}),
+  -- font = wezterm.font('MonoLisa Static-NoScript', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
+  -- font = wezterm.font('MonoLisa Static-NoScript', { weight = 'Regular', stretch = 'Normal', style = 'Italic' }),
+  -- font = wezterm.font('MonoLisa Static-NoScript', { weight = 'Medium', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("MonoLisa Static-NoScript", {weight="Medium", stretch="Normal", style="Italic"}),
   -- font = wezterm.font("MonoLisa Static-NoScript", {weight="DemiBold", stretch="Normal", style="Normal"}),
   -- font = wezterm.font("MonoLisa Static-Script", {weight="Regular", stretch="Normal", style="Normal"}),
@@ -249,7 +250,8 @@ return {
   -- color_scheme = "Gruvbox Dark",
   -- color_scheme = "OneHalfDark",
   -- color_scheme = "Batman",
-  -- color_scheme = "Dracula",
+  -- color_scheme = 'Dracula',
+  color_scheme = 'shades-of-purple',
   -- color_scheme = 'Dark Violet (base16)',
   -- color_scheme = default_color_scheme,
   -- color_scheme = 'Night Owl (Gogh)',

@@ -35,9 +35,9 @@ return {
         -- For major updates, this must be adjusted manually.
         version = '^1.0.0',
       },
-      -- {
-      --   'nvim-telescope/telescope-frecency.nvim',
-      -- },
+      {
+        'nvim-telescope/telescope-frecency.nvim',
+      },
       {
         'andrew-george/telescope-themes',
       },
@@ -151,7 +151,12 @@ return {
       -- NON BUILT-IN
 
       vim.keymap.set('n', '<leader>th', '<cmd>Telescope themes<cr>', { desc = 'swi[T]ch t[H]emes' })
-      vim.keymap.set('n', '<leader>s,', ":lua require('telescope').extensions.frecency.frecency()<CR>", { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set(
+        'n',
+        '<leader>s,',
+        ":lua require('telescope').extensions.frecency.frecency()<CR>",
+        { desc = '[S]earch Frequently open Files ("." for repeat)' }
+      )
       vim.keymap.set('n', '<leader>sW', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
       vim.keymap.set('n', '<leader>se', '<cmd>Telescope persisted<cr>', { desc = '[S]earch s[E]ssions' })
 

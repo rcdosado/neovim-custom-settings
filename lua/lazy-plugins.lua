@@ -80,6 +80,8 @@ require('lazy').setup({
 
   require 'custom/plugins/nvim-tree',
 
+  require 'custom/plugins/goto-preview',
+
   -- require 'custom/plugins/ollama-nvim',
 
   -- require 'custom/plugins/llm',

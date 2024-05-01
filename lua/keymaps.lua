@@ -84,6 +84,7 @@ vim.keymap.set('n', '<leader>ev', '<cmd>tabnew ~/AppData/Local/nvim/lua/keymaps.
 vim.keymap.set('n', '<leader>ew', '<cmd>tabnew ~/AppData/Local/nvim/lua/custom/wezterm.lua<CR>', { silent = true })
 vim.keymap.set('n', '<leader>ed', '<cmd>tabnew c:/Users/RAG/Desktop/downloads.txt<CR>', { silent = true })
 
+vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
 vim.keymap.set('n', '<leader>e', '<cmd>lua MiniFiles.open()<CR>', { desc = 'open mini.files' })
 vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
 vim.keymap.set('n', '<leader>X', '<cmd>%bd! | e#<cr>', { desc = ' Close buffers except current' })

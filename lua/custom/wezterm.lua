@@ -253,6 +253,7 @@ return {
   -- color_scheme = 'Dark Violet (base16)',
   -- color_scheme = default_color_scheme,
   -- color_scheme = 'Night Owl (Gogh)',
+  -- color_scheme = 'tokyonight_day',
 
   default_cursor_style = 'BlinkingUnderline', -- SteadyBlock, SteadyBar, BlinkingBlock,
   -- BlinkingBar, SteadyUnderline, BlinkingUnderline
@@ -265,15 +266,14 @@ return {
   tab_max_width = 32,
 
   -- image background enable start -----------------------------
-  -- window_background_opacity = 0.85,
+  window_background_opacity = 1,
   -- text_background_opacity = 0.3,
   -- win32_acrylic_accent_color = '#2b2042',
   -- win32_acrylic_accent_color = '#11111B',
   -- win32_system_backdrop = 'Acrylic',
   window_background_image = os.getenv 'USERPROFILE' .. '/AppData/Local/nvim/rsrc/bg/img60.png' or '',
   window_background_image_hsb = {
-    brightness = 0.09,
-    -- brightness = 0.05,
+    brightness = 0.05,
     hue = 1.0,
     saturation = 1.0,
   },

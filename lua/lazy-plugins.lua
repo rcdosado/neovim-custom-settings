@@ -76,6 +76,10 @@ require('lazy').setup({
 
   require 'custom/plugins/nvim-neotest',
 
+  require 'custom/plugins/markdown-preview',
+
+  require 'custom/plugins/nvim-tree',
+
   -- require 'custom/plugins/ollama-nvim',
 
   -- require 'custom/plugins/llm',

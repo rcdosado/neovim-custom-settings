@@ -23,7 +23,7 @@ return {
           center = {
             { action = 'Telescope find_files', desc = ' Find file', icon = ' ', key = 'SPC s f' },
             { action = 'ene | startinsert', desc = ' New file', icon = ' ', key = 'SPC n n' },
-            { action = 'Telescope oldfiles', desc = ' Recent files', icon = ' ', key = 'SPC s.' },
+            -- { action = 'Telescope oldfiles', desc = ' Recent files', icon = ' ', key = 'SPC s.' },
             { action = 'Telescope live_grep', desc = ' Find text', icon = ' ', key = 'SPC sw' },
             -- { action = 'lua require("persistence").load()', desc = ' Restore Session', icon = ' ', key = 'qs' },
             { action = 'qall!', desc = ' Quit', icon = ' ', key = 'QQ' },

@@ -35,9 +35,9 @@ return {
         -- For major updates, this must be adjusted manually.
         version = '^1.0.0',
       },
-      -- {
-      --   'nvim-telescope/telescope-frecency.nvim',
-      -- },
+      {
+        'nvim-telescope/telescope-frecency.nvim',
+      },
       {
         'andrew-george/telescope-themes',
       },
@@ -146,12 +146,19 @@ return {
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>rg', builtin.registers, { desc = 'Search VIM [R]e[G]isters' })
+      vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols, { desc = 'Search [W]ork[S]pace symbols' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
       -- NON BUILT-IN
 
       vim.keymap.set('n', '<leader>th', '<cmd>Telescope themes<cr>', { desc = 'swi[T]ch t[H]emes' })
-      vim.keymap.set('n', '<leader>s,', ":lua require('telescope').extensions.frecency.frecency()<CR>", { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set(
+        'n',
+        '<leader>s,',
+        ":lua require('telescope').extensions.frecency.frecency()<CR>",
+        { desc = '[S]earch Frequently open Files ("." for repeat)' }
+      )
       vim.keymap.set('n', '<leader>sW', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
       vim.keymap.set('n', '<leader>se', '<cmd>Telescope persisted<cr>', { desc = '[S]earch s[E]ssions' })
 

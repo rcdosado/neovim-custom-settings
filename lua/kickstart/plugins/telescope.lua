@@ -68,11 +68,26 @@ return {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          -- mappings = {
+          --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+          -- },
+          file_ignore_patterns = {
+            'node_modules',
+            '%_files/',
+            '%_cache',
+            '.git/',
+            'site_libs',
+            '.venv',
+            'env39',
+            'env312',
+          },
+          layout_strategy = 'flex',
+          -- sorting_strategy = 'ascending',
+          -- layout_config = {
+          --   prompt_position = 'top',
+          -- },
+        },
         pickers = {
           find_command = {
             'rg',

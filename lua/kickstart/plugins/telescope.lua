@@ -112,7 +112,7 @@ return {
             require('telescope.themes').get_dropdown(),
           },
           persisted = {
-            layout_config = { width = 0.25, height = 0.55 },
+            layout_config = { width = 0.5, height = 0.55 },
           },
           themes = {
             -- you can add regular telescope config

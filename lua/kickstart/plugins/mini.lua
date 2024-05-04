@@ -37,7 +37,19 @@ return {
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
-      -- require('mini.surround').setup()
+      require('mini.surround').setup {
+        opts = {
+          mappings = {
+            add = 'sa', -- Add surrounding in Normal and Visual modes
+            delete = 'ds', -- Delete surrounding
+            find = 'gzf', -- Find surrounding (to the right)
+            find_left = 'gzF', -- Find surrounding (to the left)
+            highlight = 'gzh', -- Highlight surrounding
+            replace = 'cs', -- Replace surrounding
+            update_n_lines = 'gzn', -- Update `n_lines`
+          },
+        },
+      }
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,

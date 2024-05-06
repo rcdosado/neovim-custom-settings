@@ -124,8 +124,16 @@ return {
   -- https://wezfurlong.org/wezterm/config/default-keys.html
   keys = {
     -- create new tab pane
-    { key = 'l', mods = 'ALT', action = wezterm.action { SplitPane = { direction = 'Right', command = { args = {} }, size = { Percent = 30 } } } },
-    { key = 'j', mods = 'ALT', action = wezterm.action { SplitPane = { direction = 'Down', command = { args = {} }, size = { Percent = 25 } } } },
+    {
+      key = 'RightArrow',
+      mods = 'CTRL|ALT',
+      action = wezterm.action { SplitPane = { direction = 'Right', command = { args = {} }, size = { Percent = 30 } } },
+    },
+    {
+      key = 'DownArrow',
+      mods = 'CTRL|ALT',
+      action = wezterm.action { SplitPane = { direction = 'Down', command = { args = {} }, size = { Percent = 25 } } },
+    },
 
     -- switch between tabs
     { key = 'Tab', mods = 'CTRL', action = wezterm.action { ActivateTabRelative = 1 } },
@@ -197,7 +205,7 @@ return {
   -- font = wezterm.font("IntelOne Mono", {weight="Bold", stretch="Normal", style="Italic"}),
   -- font = wezterm.font("OperatorMono Nerd Font", {weight="DemiLight", stretch="Normal", italic=false}),
   -- font = wezterm.font("OperatorMono Nerd Font", {weight=275, stretch="Normal", italic=false}),
-  -- font = wezterm.font("JetBrainsMono NF", {weight="Regular", stretch="Normal", italic=false}),
+  font = wezterm.font('JetBrainsMono NF', { weight = 'Regular', stretch = 'Normal', italic = false }),
   -- font = wezterm.font("JetBrainsMonoMedium NF", {weight="Medium", stretch="Normal", italic=false}),
   -- font = wezterm.font("SauceCodePro NF", {weight="Regular", stretch="Normal", italic=false}),
   -- font = wezterm.font("SauceCodePro Nerd Font Mono", {weight="Regular", stretch="Normal", italic=false}),
@@ -219,7 +227,7 @@ return {
   -- font = wezterm.font('FiraCode NF', { weight = 'Medium', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("FiraCode NF", {weight="DemiBold", stretch="Normal", style="Normal"}),
   -- font = wezterm.font("FiraCode NF", {weight="Bold", stretch="Normal", style="Normal"}),
-  font = wezterm.font('JuliaMono', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
+  -- font = wezterm.font('JuliaMono', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font('ComicMono NF', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("ComicMono NF", {weight="Regular", stretch="Normal", style="Normal"}),
   -- font = wezterm.font("Comic Code Ligatures", {weight=250, stretch="Normal", style="Normal"}),

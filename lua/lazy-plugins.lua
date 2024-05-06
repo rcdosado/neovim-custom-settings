@@ -84,6 +84,8 @@ require('lazy').setup({
 
   require 'custom/plugins/dressing-nvim',
 
+  require 'custom/plugins/switch-vim',
+
   -- require 'custom/plugins/ollama-nvim',
   -- require 'custom/plugins/llm',
 

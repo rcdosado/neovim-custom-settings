@@ -108,15 +108,15 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- toggles
 
-vim.keymap.set('n', '<leader>tld', '<Plug>(toggle-lsp-diag)<cr>', { desc = 'Toggle diagnostics' })
-vim.keymap.set('n', '<leader>tib', '<cmd>IBLToggle<cr>', { desc = 'Toggle Indent-Blankline' })
-vim.keymap.set('n', '<leader>tln', '<cmd>set nu!<cr>', { nowait = true, desc = 'Toggle Line number' })
-vim.keymap.set('n', '<leader>trn', '<cmd>set rnu!<cr>', { nowait = true, desc = 'Toggle Relative number' })
-vim.keymap.set('n', '<leader>tlc', '<cmd>set list!<cr>', { nowait = true, desc = 'Show/Hide listchars' })
-vim.keymap.set('n', '<leader>tat', '<cmd>AerialToggle!<CR>', { desc = 'Toggle aerial' })
-vim.keymap.set('n', '<leader>tci', '<cmd>CodeiumToggle<cr>', { nowait = true, desc = 'Toggle Codeium' })
-vim.keymap.set('n', '<leader>trp', '<cmd>TransparentToggle<cr>', { nowait = true, desc = 'Toggle Transparency' })
-vim.keymap.set('n', '<leader>tac', function()
+vim.keymap.set('n', '<leader>Td', '<Plug>(toggle-lsp-diag)<cr>', { desc = 'Toggle diagnostics' })
+vim.keymap.set('n', '<leader>Tib', '<cmd>IBLToggle<cr>', { desc = 'Toggle Indent-Blankline' })
+vim.keymap.set('n', '<leader>Tln', '<cmd>set nu!<cr>', { nowait = true, desc = 'Toggle Line number' })
+vim.keymap.set('n', '<leader>Trn', '<cmd>set rnu!<cr>', { nowait = true, desc = 'Toggle Relative number' })
+vim.keymap.set('n', '<leader>Tlc', '<cmd>set list!<cr>', { nowait = true, desc = 'Show/Hide listchars' })
+vim.keymap.set('n', '<leader>Tal', '<cmd>AerialToggle!<CR>', { desc = 'Toggle aerial' })
+vim.keymap.set('n', '<leader>Tc', '<cmd>CodeiumToggle<cr>', { nowait = true, desc = 'Toggle Codeium' })
+vim.keymap.set('n', '<leader>Trp', '<cmd>TransparentToggle<cr>', { nowait = true, desc = 'Toggle Transparency' })
+vim.keymap.set('n', '<leader>Tac', function()
   local flag = require('cmp.config').get().enabled
   require('cmp').setup.buffer { enabled = not flag }
 end, { nowait = true, desc = 'Toggle Autocomplete' })

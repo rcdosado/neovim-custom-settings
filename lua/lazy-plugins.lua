@@ -88,6 +88,8 @@ require('lazy').setup({
 
   require 'custom/plugins/nvterm-nvim',
 
+  require 'custom/plugins/egrepify-nvim',
+
   -- require 'custom/plugins/ollama-nvim',
   -- require 'custom/plugins/llm',
 

@@ -90,7 +90,7 @@ return {
         --
         defaults = {
           -- remove this line to old format
-          path_display = filenameFirst,
+          -- path_display = filenameFirst,
 
           file_ignore_patterns = {
             'node_modules',
@@ -131,6 +131,9 @@ return {
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
+          },
+          telekasten = {
+            path_display = filenameFirst,
           },
           persisted = {
             layout_config = { width = 0.5, height = 0.55 },

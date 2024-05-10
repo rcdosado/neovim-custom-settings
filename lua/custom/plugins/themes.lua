@@ -14,6 +14,12 @@ return {
   { 'LunarVim/darkplus.nvim' },
   { 'yeddaif/neovim-purple' },
   { 'scottmckendry/cyberdream.nvim' },
+  { 'Mofiqul/vscode.nvim' },
+  { 'mcchrish/zenbones.nvim', dependencies = {
+    'rktjmp/lush.nvim',
+  } },
+  -- { 'projekt0n/gihub-nvim-theme' },
+  { 'olivercederborg/poimandres.nvim' },
   {
     'navarasu/onedark.nvim',
     config = function()

@@ -116,6 +116,11 @@ vim.keymap.set('n', '<leader>Tlc', '<cmd>set list!<cr>', { nowait = true, desc =
 vim.keymap.set('n', '<leader>Tal', '<cmd>AerialToggle!<CR>', { desc = 'Toggle aerial' })
 vim.keymap.set('n', '<leader>Tc', '<cmd>CodeiumToggle<cr>', { nowait = true, desc = 'Toggle Codeium' })
 vim.keymap.set('n', '<leader>Trp', '<cmd>TransparentToggle<cr>', { nowait = true, desc = 'Toggle Transparency' })
+
+vim.keymap.set('n', '<leader>Tld', function()
+  vim.o.bg = (vim.o.bg == 'dark') and 'light' or 'dark'
+end, { nowait = true, desc = 'Toggle Light/dark' })
+
 vim.keymap.set('n', '<leader>Tac', function()
   local flag = require('cmp.config').get().enabled
   require('cmp').setup.buffer { enabled = not flag }

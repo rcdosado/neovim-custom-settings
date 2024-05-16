@@ -82,8 +82,13 @@ require('lazy').setup({
 
   require 'custom/plugins/goto-preview',
 
-  -- require 'custom/plugins/ollama-nvim',
+  require 'custom/plugins/nvim-lightbulb',
 
+  require 'custom/plugins/telekasten',
+
+  require 'custom/plugins/dressing-nvim',
+
+  -- require 'custom/plugins/ollama-nvim',
   -- require 'custom/plugins/llm',
 
   -- require 'kickstart.plugins.debug',

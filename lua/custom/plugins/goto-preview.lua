@@ -25,7 +25,7 @@
         preview_window_title = { enable = true, position = 'left' }, -- Whether to set the preview window title as the filename
       }
 
-      vim.keymap.set('n', '<ESC>', '<cmd>lua require("goto-preview").close_all_win()<CR>', { desc = 'Increase window height' })
+      vim.keymap.set('n', 'qq', '<cmd>lua require("goto-preview").close_all_win()<CR>', { desc = 'Increase window height' })
     end,
   },
 }

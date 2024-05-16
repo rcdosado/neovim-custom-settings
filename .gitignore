@@ -3,5 +3,6 @@ test.sh
 .luarc.json
 nvim
 lua/current-theme.lua
+lua/custom/wezterm.lua
 spell/
 lazy-lock.json

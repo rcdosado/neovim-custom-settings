@@ -1,6 +1,9 @@
 return {
   {
     'sarrisv/readermode.nvim',
-    opts = {},
+    opts = {
+      enabled = false,
+      keymap = '<leader>Trm',
+    },
   },
 }

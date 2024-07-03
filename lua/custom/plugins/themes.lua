@@ -1,4 +1,7 @@
 return {
+  { 'sho-87/kanagawa-paper.nvim' },
+  { 'uloco/bluloco.nvim', lazy = false, priority = 1000 },
+  { 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 },
   { 'rose-pine/neovim', name = 'rose-pine' },
   { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true, opts = {} },
   { 'sainnhe/gruvbox-material', name = 'gruvbox-material' },

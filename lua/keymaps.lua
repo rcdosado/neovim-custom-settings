@@ -116,6 +116,7 @@ vim.keymap.set('n', '<leader>Tlc', '<cmd>set list!<cr>', { nowait = true, desc =
 vim.keymap.set('n', '<leader>Tal', '<cmd>AerialToggle!<CR>', { desc = 'Toggle aerial' })
 vim.keymap.set('n', '<leader>Tc', '<cmd>CodeiumToggle<cr>', { nowait = true, desc = 'Toggle Codeium' })
 vim.keymap.set('n', '<leader>Trp', '<cmd>TransparentToggle<cr>', { nowait = true, desc = 'Toggle Transparency' })
+vim.keymap.set('n', '<leader>Trm', '<cmd>ReaderMode<cr>', { nowait = true, desc = 'Toggle ReaderMode' })
 
 vim.keymap.set('n', '<leader>Tld', function()
   vim.o.bg = (vim.o.bg == 'dark') and 'light' or 'dark'

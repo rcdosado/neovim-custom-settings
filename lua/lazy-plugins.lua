@@ -92,6 +92,8 @@ require('lazy').setup({
 
   require 'custom/plugins/in-and-out-nvim',
 
+  require 'custom/plugins/readermode',
+
   -- require 'custom/plugins/my-note-nvim',
 
   -- require 'custom/plugins/ollama-nvim',

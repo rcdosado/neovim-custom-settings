@@ -35,6 +35,9 @@ return {
       {
         'andrew-george/telescope-themes',
       },
+      {
+        'crispgm/telescope-heading.nvim',
+      },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -193,6 +196,13 @@ return {
               path = vim.fn.stdpath 'config' .. '/lua/current-theme.lua',
             },
           },
+          heading = {
+            treesitter = true,
+            picker_opts = {
+              layout_config = { width = 0.8, preview_width = 0.5 },
+              layout_strategy = 'horizontal',
+            },
+          },
         },
       }
 
@@ -203,6 +213,7 @@ return {
       pcall(require('telescope').load_extension, 'persisted')
       pcall(require('telescope').load_extension, 'themes')
       pcall(require('telescope').load_extension, 'egrepify')
+      pcall(require('telescope').load_extension, 'heading')
 
       -- SHORTCUTS
 
@@ -233,6 +244,7 @@ return {
         { desc = '[S]earch Frequently open Files ("." for repeat)' }
       )
       vim.keymap.set('n', '<leader>se', '<cmd>Telescope persisted<cr>', { desc = '[S]earch s[E]ssions' })
+      vim.keymap.set('n', '<leader>dh', '<cmd>Telescope heading<cr>', { desc = '[D]isplay [H]eading' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()

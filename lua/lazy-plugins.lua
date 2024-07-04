@@ -88,6 +88,18 @@ require('lazy').setup({
 
   require 'custom/plugins/dressing-nvim',
 
+  require 'custom/plugins/switch-vim',
+
+  require 'custom/plugins/nvterm-nvim',
+
+  require 'custom/plugins/egrepify-nvim',
+
+  require 'custom/plugins/in-and-out-nvim',
+
+  require 'custom/plugins/readermode',
+
+  -- require 'custom/plugins/my-note-nvim',
+
   -- require 'custom/plugins/ollama-nvim',
   -- require 'custom/plugins/llm',
 

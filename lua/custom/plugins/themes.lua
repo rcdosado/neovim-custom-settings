@@ -1,4 +1,7 @@
 return {
+  { 'sho-87/kanagawa-paper.nvim' },
+  { 'uloco/bluloco.nvim', lazy = false, priority = 1000 },
+  { 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 },
   { 'rose-pine/neovim', name = 'rose-pine' },
   { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true, opts = {} },
   { 'sainnhe/gruvbox-material', name = 'gruvbox-material' },
@@ -14,6 +17,12 @@ return {
   { 'LunarVim/darkplus.nvim' },
   { 'yeddaif/neovim-purple' },
   { 'scottmckendry/cyberdream.nvim' },
+  { 'Mofiqul/vscode.nvim' },
+  { 'mcchrish/zenbones.nvim', dependencies = {
+    'rktjmp/lush.nvim',
+  } },
+  -- { 'projekt0n/gihub-nvim-theme' },
+  { 'olivercederborg/poimandres.nvim' },
   {
     'navarasu/onedark.nvim',
     config = function()

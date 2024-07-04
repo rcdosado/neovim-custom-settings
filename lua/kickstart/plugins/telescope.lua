@@ -30,16 +30,13 @@ return {
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
       {
-        'nvim-telescope/telescope-live-grep-args.nvim',
-        -- This will not install any breaking changes.
-        -- For major updates, this must be adjusted manually.
-        version = '^1.0.0',
-      },
-      {
         'nvim-telescope/telescope-frecency.nvim',
       },
       {
         'andrew-george/telescope-themes',
+      },
+      {
+        'crispgm/telescope-heading.nvim',
       },
     },
     config = function()
@@ -84,13 +81,15 @@ return {
         end,
       })
 
+      local egrep_actions = require 'telescope._extensions.egrepify.actions'
+
       require('telescope').setup {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
         defaults = {
           -- remove this line to old format
-          path_display = filenameFirst,
+          -- path_display = filenameFirst,
 
           file_ignore_patterns = {
             'node_modules',
@@ -129,8 +128,48 @@ return {
           },
         },
         extensions = {
+          egrepify = {
+            -- intersect tokens in prompt ala "str1.*str2" that ONLY matches
+            -- if str1 and str2 are consecutively in line with anything in between (wildcard)
+            AND = true, -- default
+            permutations = false, -- opt-in to imply AND & match all permutations of prompt tokens
+            lnum = true, -- default, not required
+            lnum_hl = 'EgrepifyLnum', -- default, not required, links to `Constant`
+            col = false, -- default, not required
+            col_hl = 'EgrepifyCol', -- default, not required, links to `Constant`
+            title = true, -- default, not required, show filename as title rather than inline
+            filename_hl = 'EgrepifyFile', -- default, not required, links to `Title`
+            -- suffix = long line, see screenshot
+            -- EXAMPLE ON HOW TO ADD PREFIX!
+            prefixes = {
+              -- ADDED ! to invert matches
+              -- example prompt: ! sorter
+              -- matches all lines that do not comprise sorter
+              -- rg --invert-match -- sorter
+              ['!'] = {
+                flag = 'invert-match',
+              },
+              -- HOW TO OPT OUT OF PREFIX
+              -- ^ is not a default prefix and safe example
+              ['^'] = false,
+            },
+            -- default mappings
+            mappings = {
+              i = {
+                -- toggle prefixes, prefixes is default
+                ['<C-z>'] = egrep_actions.toggle_prefixes,
+                -- toggle AND, AND is default, AND matches tokens and any chars in between
+                ['<C-a>'] = egrep_actions.toggle_and,
+                -- toggle permutations, permutations of tokens is opt-in
+                ['<C-r>'] = egrep_actions.toggle_permutations,
+              },
+            },
+          },
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
+          },
+          telekasten = {
+            path_display = filenameFirst,
           },
           persisted = {
             layout_config = { width = 0.5, height = 0.55 },
@@ -157,16 +196,24 @@ return {
               path = vim.fn.stdpath 'config' .. '/lua/current-theme.lua',
             },
           },
+          heading = {
+            treesitter = true,
+            picker_opts = {
+              layout_config = { width = 0.8, preview_width = 0.5 },
+              layout_strategy = 'horizontal',
+            },
+          },
         },
       }
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
-      pcall(require('telescope').load_extension, 'live_grep_args')
       pcall(require('telescope').load_extension, 'frecency')
       pcall(require('telescope').load_extension, 'persisted')
       pcall(require('telescope').load_extension, 'themes')
+      pcall(require('telescope').load_extension, 'egrepify')
+      pcall(require('telescope').load_extension, 'heading')
 
       -- SHORTCUTS
 
@@ -178,7 +225,8 @@ return {
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-      vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+      vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [g]rep' })
+      vim.keymap.set('n', '<leader>sG', '<cmd>Telescope egrepify<cr>', { desc = '[S]earch by e[G]repify' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
@@ -195,8 +243,8 @@ return {
         ":lua require('telescope').extensions.frecency.frecency()<CR>",
         { desc = '[S]earch Frequently open Files ("." for repeat)' }
       )
-      vim.keymap.set('n', '<leader>sW', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
       vim.keymap.set('n', '<leader>se', '<cmd>Telescope persisted<cr>', { desc = '[S]earch s[E]ssions' })
+      vim.keymap.set('n', '<leader>dh', '<cmd>Telescope heading<cr>', { desc = '[D]isplay [H]eading' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()

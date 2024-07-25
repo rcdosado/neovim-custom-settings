@@ -39,18 +39,18 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup {
         -- defaults
-        -- mappings = {
-        --    add = 'sa', -- Add surrounding in Normal and Visual modes
-        --    delete = 'sd', -- Delete surrounding
-        --    find = 'sf', -- Find surrounding (to the right)
-        --    find_left = 'sF', -- Find surrounding (to the left)
-        --    highlight = 'sh', -- Highlight surrounding
-        --    replace = 'sr', -- Replace surrounding
-        --    update_n_lines = 'sn', -- Update `n_lines`
-        --
-        --    suffix_last = 'l', -- Suffix to search with "prev" method
-        --    suffix_next = 'n', -- Suffix to search with "next" method
-        --  },
+        mappings = {
+          add = '_sa', -- Add surrounding in Normal and Visual modes
+          delete = '_sd', -- Delete surrounding
+          find = '_sf', -- Find surrounding (to the right)
+          find_left = '_sF', -- Find surrounding (to the left)
+          highlight = '_sh', -- Highlight surrounding
+          replace = '_sr', -- Replace surrounding
+          update_n_lines = '_sn', -- Update `n_lines`
+
+          suffix_last = 'l', -- Suffix to search with "prev" method
+          suffix_next = 'n', -- Suffix to search with "next" method
+        },
       }
 
       -- Simple and easy statusline.

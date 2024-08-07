@@ -4,4 +4,5 @@ test.sh
 nvim
 lua/current-theme.lua
 spell/
+env/
 lazy-lock.json

@@ -12,60 +12,15 @@ return {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      { -- If encountering errors, see telescope-fzf-native README for installation instructions
-        'nvim-telescope/telescope-fzf-native.nvim',
-
-        -- `build` is used to run some command when the plugin is installed/updated.
-        -- This is only run then, not every time Neovim starts up.
-        -- build = 'make',
-        build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release',
-        -- config = function()
-        --   require('telescope').load_extension 'fzf'
-        -- end,
-
-        -- `cond` is a condition used to determine whether this plugin should be
-        -- installed and loaded.
-        -- cond = function()
-        --   return vim.fn.executable 'make' == 1
-        -- end,
-      },
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
       {
-        'nvim-telescope/telescope-frecency.nvim',
-      },
-      {
         'andrew-george/telescope-themes',
-      },
-      {
-        'crispgm/telescope-heading.nvim',
       },
     },
     config = function()
-      -- Telescope is a fuzzy finder that comes with a lot of different things that
-      -- it can fuzzy find! It's more than just a "file finder", it can search
-      -- many different aspects of Neovim, your workspace, LSP, and more!
-      --
-      -- The easiest way to use Telescope, is to start by doing something like:
-      --  :Telescope help_tags
-      --
-      -- After running this command, a window will open up and you're able to
-      -- type in the prompt window. You'll see a list of `help_tags` options and
-      -- a corresponding preview of the help.
-      --
-      -- Two important keymaps to use while in Telescope are:
-      --  - Insert mode: <c-/>
-      --  - Normal mode: ?
-      --
-      -- This opens a window that shows you all of the keymaps for the current
-      -- Telescope picker. This is really useful to discover what Telescope can
-      -- do as well as how to actually do it!
-
-      -- [[ Configure Telescope ]]
-      -- See `:help telescope` and `:help telescope.setup()`
-
       local function filenameFirst(_, path)
         local tail = vim.fs.basename(path)
         local parent = vim.fs.dirname(path)
@@ -84,8 +39,6 @@ return {
           end)
         end,
       })
-
-      local egrep_actions = require 'telescope._extensions.egrepify.actions'
 
       require('telescope').setup {
         -- You can put your default mappings / updates / etc. in here
@@ -132,48 +85,8 @@ return {
           },
         },
         extensions = {
-          egrepify = {
-            -- intersect tokens in prompt ala "str1.*str2" that ONLY matches
-            -- if str1 and str2 are consecutively in line with anything in between (wildcard)
-            AND = true, -- default
-            permutations = false, -- opt-in to imply AND & match all permutations of prompt tokens
-            lnum = true, -- default, not required
-            lnum_hl = 'EgrepifyLnum', -- default, not required, links to `Constant`
-            col = false, -- default, not required
-            col_hl = 'EgrepifyCol', -- default, not required, links to `Constant`
-            title = true, -- default, not required, show filename as title rather than inline
-            filename_hl = 'EgrepifyFile', -- default, not required, links to `Title`
-            -- suffix = long line, see screenshot
-            -- EXAMPLE ON HOW TO ADD PREFIX!
-            prefixes = {
-              -- ADDED ! to invert matches
-              -- example prompt: ! sorter
-              -- matches all lines that do not comprise sorter
-              -- rg --invert-match -- sorter
-              ['!'] = {
-                flag = 'invert-match',
-              },
-              -- HOW TO OPT OUT OF PREFIX
-              -- ^ is not a default prefix and safe example
-              ['^'] = false,
-            },
-            -- default mappings
-            mappings = {
-              i = {
-                -- toggle prefixes, prefixes is default
-                ['<C-z>'] = egrep_actions.toggle_prefixes,
-                -- toggle AND, AND is default, AND matches tokens and any chars in between
-                ['<C-a>'] = egrep_actions.toggle_and,
-                -- toggle permutations, permutations of tokens is opt-in
-                ['<C-r>'] = egrep_actions.toggle_permutations,
-              },
-            },
-          },
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
-          },
-          telekasten = {
-            path_display = filenameFirst,
           },
           persisted = {
             layout_config = { width = 0.5, height = 0.55 },
@@ -200,24 +113,17 @@ return {
               path = vim.fn.stdpath 'config' .. '/lua/current-theme.lua',
             },
           },
-          heading = {
-            treesitter = true,
-            picker_opts = {
-              layout_config = { width = 0.8, preview_width = 0.5 },
-              layout_strategy = 'horizontal',
-            },
-          },
         },
       }
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
-      pcall(require('telescope').load_extension, 'frecency')
+      -- pcall(require('telescope').load_extension, 'frecency')
       pcall(require('telescope').load_extension, 'persisted')
       pcall(require('telescope').load_extension, 'themes')
       pcall(require('telescope').load_extension, 'egrepify')
-      pcall(require('telescope').load_extension, 'heading')
+      -- pcall(require('telescope').load_extension, 'heading')
 
       -- SHORTCUTS
 
@@ -241,14 +147,8 @@ return {
       -- NON BUILT-IN
 
       vim.keymap.set('n', '<leader>th', '<cmd>Telescope themes<cr>', { desc = 'swi[T]ch t[H]emes' })
-      vim.keymap.set(
-        'n',
-        '<leader>s,',
-        ":lua require('telescope').extensions.frecency.frecency()<CR>",
-        { desc = '[S]earch Frequently open Files ("." for repeat)' }
-      )
       vim.keymap.set('n', '<leader>se', '<cmd>Telescope persisted<cr>', { desc = '[S]earch s[E]ssions' })
-      vim.keymap.set('n', '<leader>dh', '<cmd>Telescope heading<cr>', { desc = '[D]isplay [H]eading' })
+      -- vim.keymap.set('n', '<leader>dh', '<cmd>Telescope heading<cr>', { desc = '[D]isplay [H]eading' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()

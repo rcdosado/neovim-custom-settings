@@ -23,12 +23,12 @@ require('lazy').setup({
   --    require('Comment').setup({})
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  -- { 'numToStr/Comment.nvim', opts = {} },
 
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'kickstart/plugins/gitsigns',
+  -- require 'kickstart/plugins/gitsigns',
 
   require 'kickstart/plugins/which-key',
 
@@ -40,15 +40,15 @@ require('lazy').setup({
 
   require 'kickstart/plugins/cmp',
 
-  require 'kickstart/plugins/todo-comments',
+  -- require 'kickstart/plugins/todo-comments',
 
   require 'kickstart/plugins/mini',
 
   require 'kickstart/plugins/treesitter',
 
-  require 'custom/plugins/nvim-window',
+  -- require 'custom/plugins/nvim-window',
 
-  require 'custom/plugins/leap',
+  -- require 'custom/plugins/leap',
 
   require 'custom/plugins/harpoon',
 
@@ -58,41 +58,41 @@ require('lazy').setup({
 
   require 'custom/plugins/toggle-diagnostics',
 
-  require 'custom/plugins/lexima',
+  -- require 'custom/plugins/lexima',
 
-  require 'custom/plugins/codeium-vim',
+  -- require 'custom/plugins/codeium-vim',
 
-  require 'custom/plugins/bufferline',
+  -- require 'custom/plugins/bufferline',
 
-  require 'custom/plugins/dashboard-nvim',
+  -- require 'custom/plugins/dashboard-nvim',
 
-  require 'custom/plugins/nvim-tree',
+  -- require 'custom/plugins/nvim-tree',
 
   require 'custom/plugins/persisted',
 
   require 'custom/plugins/transparent-nvim',
 
-  require 'custom/plugins/nvim-bufdel',
+  -- require 'custom/plugins/nvim-bufdel',
 
-  require 'custom/plugins/nvim-neotest',
+  -- require 'custom/plugins/nvim-neotest',
 
-  require 'custom/plugins/goto-preview',
+  -- require 'custom/plugins/goto-preview',
 
-  require 'custom/plugins/nvim-lightbulb',
+  -- require 'custom/plugins/nvim-lightbulb',
 
-  require 'custom/plugins/telekasten',
+  -- require 'custom/plugins/telekasten',
 
-  require 'custom/plugins/dressing-nvim',
+  -- require 'custom/plugins/dressing-nvim',
 
-  require 'custom/plugins/switch-vim',
+  -- require 'custom/plugins/switch-vim',
 
-  require 'custom/plugins/nvterm-nvim',
+  -- require 'custom/plugins/nvterm-nvim',
 
   require 'custom/plugins/egrepify-nvim',
 
-  require 'custom/plugins/in-and-out-nvim',
+  -- require 'custom/plugins/in-and-out-nvim',
 
-  require 'custom/plugins/readermode',
+  -- require 'custom/plugins/readermode',
 
   -- require 'custom/plugins/my-note-nvim',
 

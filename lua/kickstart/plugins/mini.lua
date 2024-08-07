@@ -2,7 +2,7 @@ return {
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
-      -- require('mini.pairs').setup()
+      require('mini.pairs').setup()
 
       -- Better Around/Inside textobjects
       --
@@ -39,18 +39,18 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup {
         -- defaults
-        mappings = {
-          add = '_sa', -- Add surrounding in Normal and Visual modes
-          delete = '_sd', -- Delete surrounding
-          find = '_sf', -- Find surrounding (to the right)
-          find_left = '_sF', -- Find surrounding (to the left)
-          highlight = '_sh', -- Highlight surrounding
-          replace = '_sr', -- Replace surrounding
-          update_n_lines = '_sn', -- Update `n_lines`
-
-          suffix_last = 'l', -- Suffix to search with "prev" method
-          suffix_next = 'n', -- Suffix to search with "next" method
-        },
+        -- mappings = {
+        --   add = '_sa', -- Add surrounding in Normal and Visual modes
+        --   delete = '_sd', -- Delete surrounding
+        --   find = '_sf', -- Find surrounding (to the right)
+        --   find_left = '_sF', -- Find surrounding (to the left)
+        --   highlight = '_sh', -- Highlight surrounding
+        --   replace = '_sr', -- Replace surrounding
+        --   update_n_lines = '_sn', -- Update `n_lines`
+        --
+        --   suffix_last = 'l', -- Suffix to search with "prev" method
+        --   suffix_next = 'n', -- Suffix to search with "next" method
+        -- },
       }
 
       -- Simple and easy statusline.

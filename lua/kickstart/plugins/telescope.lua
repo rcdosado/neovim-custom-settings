@@ -236,7 +236,7 @@ return {
 
       -- NON BUILT-IN
 
-      vim.keymap.set('n', '<leader>th', '<cmd>Telescope themes<cr>', { desc = 'swi[T]ch t[H]emes' })
+      vim.keymap.set('n', '<leader>st', '<cmd>Telescope themes<cr>', { desc = 'swi[T]ch t[H]emes' })
       vim.keymap.set(
         'n',
         '<leader>s,',

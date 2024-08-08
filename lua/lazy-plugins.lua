@@ -98,6 +98,7 @@ require('lazy').setup({
 
   -- require 'custom/plugins/ollama-nvim',
   -- require 'custom/plugins/llm',
+  require 'custom/plugins/global-note',
 
   -- require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',

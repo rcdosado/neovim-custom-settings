@@ -75,6 +75,7 @@ vim.keymap.set('n', '<leader>Tib', '<cmd>IBLToggle<cr>', { desc = 'Toggle Indent
 vim.keymap.set('n', '<leader>Tln', '<cmd>set nu!<cr>', { nowait = true, desc = 'Toggle Line number' })
 vim.keymap.set('n', '<leader>Trn', '<cmd>set rnu!<cr>', { nowait = true, desc = 'Toggle Relative number' })
 vim.keymap.set('n', '<leader>Tlc', '<cmd>set list!<cr>', { nowait = true, desc = 'Show/Hide listchars' })
+vim.keymap.set('n', '<leader>Tal', '<cmd>AerialToggle<cr>', { nowait = true, desc = 'Toggle Aerial' })
 vim.keymap.set('n', '<leader>Trp', '<cmd>TransparentToggle<cr>', { nowait = true, desc = 'Toggle Transparency' })
 vim.keymap.set('n', '<leader>Tld', function()
   vim.o.bg = (vim.o.bg == 'dark') and 'light' or 'dark'
@@ -93,6 +94,11 @@ vim.keymap.set('n', '<C-Up>', '<cmd>resize +1<cr>', { desc = 'Increase window he
 vim.keymap.set('n', '<C-Down>', '<cmd>resize -1<cr>', { desc = 'Decrease window height' })
 vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize +2<cr>', { desc = 'Decrease window width' })
 vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize -2<cr>', { desc = 'Increase window width' })
+
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Move Lines
 vim.keymap.set('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'Move down' })

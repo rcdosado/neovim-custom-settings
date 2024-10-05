@@ -35,5 +35,6 @@ return {
         { 'low', 'high' },
       }
     end,
+    lazy=true,
   },
 }

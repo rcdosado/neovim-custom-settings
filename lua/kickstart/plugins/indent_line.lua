@@ -7,5 +7,6 @@ return {
     opts = {
       enabled = false,
     },
+    lazy=true,
   },
 }

@@ -27,5 +27,6 @@
 
       vim.keymap.set('n', 'qq', '<cmd>lua require("goto-preview").close_all_win()<CR>', { desc = 'Increase window height' })
     end,
+    lazy=true,
   },
 }

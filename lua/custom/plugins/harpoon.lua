@@ -46,6 +46,6 @@ return {
         harpoon:list():next()
       end)
     end,
-    lazy = false,
+    lazy = true,
   },
 }

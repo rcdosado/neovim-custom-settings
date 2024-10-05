@@ -71,5 +71,6 @@ return {
       vim.keymap.set('n', '[n', '<cmd>lua require("neotest").jump.prev({status = "failed"})<CR>', { silent = true })
       vim.keymap.set('n', ']n', '<cmd>lua require("neotest").jump.next({status = "failed"})<CR>', { silent = true })
     end,
+    lazy=true,
   },
 }

@@ -1,3 +1,3 @@
 return {
-  { 'ojroques/nvim-bufdel' },
+  { 'ojroques/nvim-bufdel' , lazy=true,},
 }

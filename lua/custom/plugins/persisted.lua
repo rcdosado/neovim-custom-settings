@@ -9,5 +9,6 @@ return {
         follow_cwd = true,
       }
     end,
+    lazy=true,
   },
 }

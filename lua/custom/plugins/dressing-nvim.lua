@@ -169,5 +169,6 @@ return {
       }
     end,
     opts = {},
+    lazy=true,
   },
 }

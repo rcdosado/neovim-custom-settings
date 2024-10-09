@@ -5,5 +5,6 @@ return {
       enabled = false,
       keymap = '<leader>Trm',
     },
+    lazy=true,
   },
 }

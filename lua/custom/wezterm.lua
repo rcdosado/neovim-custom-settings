@@ -206,7 +206,7 @@ return {
   -- font = wezterm.font("OperatorMono Nerd Font", {weight="DemiLight", stretch="Normal", italic=false}),
   -- font = wezterm.font("OperatorMono Nerd Font", {weight=275, stretch="Normal", italic=false}),
   -- font = wezterm.font('JetBrainsMono NF', { weight = 'Regular', stretch = 'Normal', italic = false }),
-  -- font = wezterm.font('JetBrainsMonoMedium NF', { weight = 'Medium', stretch = 'Normal', italic = false }),
+  -- font = wezterm.font("JetBrainsMonoMedium NF", {weight="Medium", stretch="Normal", italic=false}),
   -- font = wezterm.font("SauceCodePro NF", {weight="Regular", stretch="Normal", italic=false}),
   -- font = wezterm.font("SauceCodePro Nerd Font Mono", {weight="Regular", stretch="Normal", italic=false}),
   -- font = wezterm.font("SauceCodePro Nerd Font Mono", {weight="Regular", stretch="Normal", italic=false}),

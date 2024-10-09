@@ -1,4 +1,5 @@
 return {
+  { 'NTBBloodbath/sweetie.nvim' },
   { 'sho-87/kanagawa-paper.nvim' },
   { 'uloco/bluloco.nvim', lazy = false, priority = 1000 },
   { 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 },
@@ -122,5 +123,6 @@ return {
         which_key = true,
       },
     },
+    lazy=true,
   },
 }

@@ -102,7 +102,7 @@ vim.g.python3_host_prog = '~/AppData/Local/nvim/env/Scripts/python.exe'
 local nvim_path = vim.fn.stdpath 'config'
 
 -- [[ Setting options ]]
--- require 'options'
+require 'options'
 
 -- [[ Basic Keymaps ]]
 require 'keymaps'

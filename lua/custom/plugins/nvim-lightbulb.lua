@@ -1,3 +1,3 @@
 return {
-  { 'kosayoda/nvim-lightbulb' },
+  { 'kosayoda/nvim-lightbulb', lazy=true, },
 }

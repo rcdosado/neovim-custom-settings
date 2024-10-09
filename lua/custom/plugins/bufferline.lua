@@ -7,5 +7,6 @@ return {
       local bl = require 'bufferline'
       bl.setup {}
     end,
+    lazy=true,
   },
 }

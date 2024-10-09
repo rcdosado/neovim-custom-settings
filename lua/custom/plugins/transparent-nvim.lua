@@ -5,5 +5,6 @@ return {
       local t = require 'transparent'
       t.setup {}
     end,
+    lazy=true,
   },
 }

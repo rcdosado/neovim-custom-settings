@@ -49,4 +49,5 @@ return {
     vim.g.loaded_netrwPlugin = 1
     vim.opt.termguicolors = true
   end,
+  lazy=true,
 }

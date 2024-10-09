@@ -277,6 +277,7 @@ return {
         builtin.find_files { search_dirs = { 'c:/dev/codes' }, shorten_path = true, nowait = true }
       end, { desc = '[C]ode [F]iles find' })
     end,
+    lazy = true,
   },
 }
 -- vim: ts=2 sts=2 sw=2 et

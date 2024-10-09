@@ -146,7 +146,7 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
+        -- tsserver = {},
         --
 
         lua_ls = {
@@ -194,6 +194,7 @@ return {
         },
       }
     end,
+    lazy = true,
   },
 }
 -- vim: ts=2 sts=2 sw=2 et

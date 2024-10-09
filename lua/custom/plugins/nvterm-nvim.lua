@@ -33,5 +33,6 @@ return {
         require('nvterm.terminal').toggle 'float'
       end)
     end,
+    lazy=true,
   },
 }

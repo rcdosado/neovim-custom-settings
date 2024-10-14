@@ -1,7 +1,7 @@
 return {
   {
     'rachartier/tiny-inline-diagnostic.nvim',
-    event = 'VeryLazy',
+    -- event = 'VeryLazy',
     config = function()
       require('tiny-inline-diagnostic').setup {
         options = {
@@ -12,6 +12,6 @@ return {
         },
       }
     end,
-    lazy=true,
+    -- lazy = false,
   },
 }

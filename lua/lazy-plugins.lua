@@ -28,7 +28,7 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'kickstart/plugins/gitsigns',
+  -- require 'kickstart/plugins/gitsigns',
 
   require 'kickstart/plugins/which-key',
 
@@ -40,19 +40,19 @@ require('lazy').setup({
 
   require 'kickstart/plugins/cmp',
 
-  require 'kickstart/plugins/todo-comments',
+  -- require 'kickstart/plugins/todo-comments',
 
   require 'kickstart/plugins/mini',
 
   require 'kickstart/plugins/treesitter',
 
-  require 'custom/plugins/nvim-window',
+  -- require 'custom/plugins/nvim-window',
 
   require 'custom/plugins/leap',
 
-  require 'custom/plugins/harpoon',
+  -- require 'custom/plugins/harpoon',
 
-  require 'custom/plugins/aerial',
+  -- require 'custom/plugins/aerial',
 
   require 'custom/plugins/themes',
 
@@ -60,43 +60,43 @@ require('lazy').setup({
 
   require 'custom/plugins/lexima',
 
-  require 'custom/plugins/codeium-vim',
+  -- require 'custom/plugins/codeium-vim',
 
   require 'custom/plugins/bufferline',
 
-  require 'custom/plugins/dashboard-nvim',
+  -- require 'custom/plugins/dashboard-nvim',
 
-  require 'custom/plugins/nvim-tree',
+  -- require 'custom/plugins/nvim-tree',
 
   require 'custom/plugins/persisted',
 
-  require 'custom/plugins/transparent-nvim',
+  -- require 'custom/plugins/transparent-nvim',
 
-  require 'custom/plugins/nvim-bufdel',
+  -- require 'custom/plugins/nvim-bufdel',
 
-  require 'custom/plugins/nvim-neotest',
+  -- require 'custom/plugins/nvim-neotest',
 
-  require 'custom/plugins/markdown-preview',
+  -- require 'custom/plugins/markdown-preview',
 
   require 'custom/plugins/nvim-tree',
 
-  require 'custom/plugins/goto-preview',
+  -- require 'custom/plugins/goto-preview',
 
-  require 'custom/plugins/nvim-lightbulb',
+  -- require 'custom/plugins/nvim-lightbulb',
 
-  require 'custom/plugins/telekasten',
+  -- require 'custom/plugins/telekasten',
 
-  require 'custom/plugins/dressing-nvim',
+  -- require 'custom/plugins/dressing-nvim',
 
-  require 'custom/plugins/switch-vim',
+  -- require 'custom/plugins/switch-vim',
 
-  require 'custom/plugins/nvterm-nvim',
+  -- require 'custom/plugins/nvterm-nvim',
 
   require 'custom/plugins/egrepify-nvim',
 
   require 'custom/plugins/in-and-out-nvim',
 
-  require 'custom/plugins/readermode',
+  -- require 'custom/plugins/readermode',
 
   -- require 'custom/plugins/my-note-nvim',
 
@@ -107,6 +107,7 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'custom/plugins/tiny-diagnostic-nvim',
+  require 'custom/plugins/nvim-emmet',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

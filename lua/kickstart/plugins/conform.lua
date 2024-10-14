@@ -15,7 +15,7 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        html = { { 'prettierd', 'prettier' } },
+        html = { 'prettierd', 'prettier', stop_after_first = true },
         -- Conform can also run multiple formatters sequentially
         python = { 'isort', 'black' },
         --
@@ -24,7 +24,7 @@ return {
         -- javascript = { { "prettierd", "prettier" } },
       },
     },
-    lazy=true,
+    lazy = false,
   },
 }
 -- vim: ts=2 sts=2 sw=2 et

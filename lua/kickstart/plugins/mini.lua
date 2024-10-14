@@ -51,7 +51,7 @@ return {
           suffix_last = 'l', -- Suffix to search with "prev" method
           suffix_next = 'n', -- Suffix to search with "next" method
         },
-        lazy=true,
+        lazy = true,
       }
 
       -- Simple and easy statusline.

@@ -52,7 +52,7 @@ require('lazy').setup({
 
   -- require 'custom/plugins/harpoon',
 
-  -- require 'custom/plugins/aerial',
+  require 'custom/plugins/aerial',
 
   require 'custom/plugins/themes',
 
@@ -95,6 +95,8 @@ require('lazy').setup({
   require 'custom/plugins/egrepify-nvim',
 
   require 'custom/plugins/in-and-out-nvim',
+
+  require 'custom/plugins/nvim-autopairs',
 
   -- require 'custom/plugins/readermode',
 

@@ -48,7 +48,7 @@ require('lazy').setup({
 
   require 'custom/plugins/nvim-window',
 
-  -- require 'custom/plugins/leap',
+  require 'custom/plugins/leap',
 
   require 'custom/plugins/harpoon',
 
@@ -106,6 +106,9 @@ require('lazy').setup({
 
   -- require 'custom/plugins/markview-nvim',
   require 'custom/plugins/nvim-surround',
+
+
+  require 'custom/plugins/nvim-autopairs',
 
   require 'custom/plugins/visual-split',
 

@@ -114,6 +114,12 @@ vim.keymap.set('i', ',', ',<c-g>u')
 vim.keymap.set('i', '.', '.<c-g>u')
 vim.keymap.set('i', ';', ';<c-g>u')
 
+-- LEAP
+vim.keymap.set('n', 's', '<Plug>(leap)')
+vim.keymap.set('n', 'gs', '<Plug>(leap-from-window)')
+vim.keymap.set({ 'x', 'o' }, 's', '<Plug>(leap-forward)')
+vim.keymap.set({ 'x', 'o' }, 'S', '<Plug>(leap-backward)')
+
 -- save file
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 vim.keymap.set('n', '<leader>sc', '<cmd>%y+<cr>', { nowait = true, desc = 'Select all & copy' })

@@ -36,7 +36,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/lspconfig',
 
-  require 'kickstart/plugins/conform',
+  -- require 'kickstart/plugins/conform',
 
   require 'kickstart/plugins/cmp',
 
@@ -46,7 +46,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/treesitter',
 
-  -- require 'custom/plugins/nvim-window',
+  require 'custom/plugins/nvim-window',
 
   -- require 'custom/plugins/leap',
 
@@ -58,7 +58,7 @@ require('lazy').setup({
 
   require 'custom/plugins/toggle-diagnostics',
 
-  -- require 'custom/plugins/lexima',
+  require 'custom/plugins/lexima',
 
   -- require 'custom/plugins/codeium-vim',
 
@@ -104,8 +104,12 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
 
-  require 'custom/plugins/markview-nvim',
+  -- require 'custom/plugins/markview-nvim',
   require 'custom/plugins/nvim-surround',
+
+  require 'custom/plugins/visual-split',
+
+
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

@@ -189,12 +189,12 @@ return {
   line_height = 1.2,
   -- font_dirs = {"C:/Windows/Fonts"},
   font_shaper = 'Harfbuzz', -- "Allsorts", Harfbuzz
-  font_size = 10.0,
+  font_size = 10.5,
   font_rasterizer = 'FreeType',
   -- font_antialias = "Greyscale",  -- None, Grayscale, Subpixel
   -- font_hinting = "Full",  -- None, Vertical, VerticalSubpixel, Full
   -- font = wezterm.font('Monofur Nerd Font', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
-  -- font = wezterm.font("OperatorMono Nerd Font", {weight=325, stretch="Normal", italic=false}),
+  -- font = wezterm.font('OperatorMono Nerd Font', { weight = 325, stretch = 'Normal', italic = false }),
   -- font = wezterm.font("Iosevka Nerd Font", {weight="Light", stretch="Normal", style="Normal"}),
   -- font = wezterm.font('Iosevka Nerd Font', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("Iosevka Nerd Font", {weight="Medium", stretch="Normal", style="Normal"}),
@@ -206,7 +206,7 @@ return {
   -- font = wezterm.font("OperatorMono Nerd Font", {weight="DemiLight", stretch="Normal", italic=false}),
   -- font = wezterm.font("OperatorMono Nerd Font", {weight=275, stretch="Normal", italic=false}),
   -- font = wezterm.font('JetBrainsMono NF', { weight = 'Regular', stretch = 'Normal', italic = false }),
-  -- font = wezterm.font("JetBrainsMonoMedium NF", {weight="Medium", stretch="Normal", italic=false}),
+  font = wezterm.font('JetBrainsMonoMedium NF', { weight = 'Medium', stretch = 'Normal', italic = false }),
   -- font = wezterm.font("SauceCodePro NF", {weight="Regular", stretch="Normal", italic=false}),
   -- font = wezterm.font("SauceCodePro Nerd Font Mono", {weight="Regular", stretch="Normal", italic=false}),
   -- font = wezterm.font("SauceCodePro Nerd Font Mono", {weight="Regular", stretch="Normal", italic=false}),
@@ -229,7 +229,7 @@ return {
   -- font = wezterm.font("FiraCode NF", {weight="Bold", stretch="Normal", style="Normal"}),
   -- font = wezterm.font('JuliaMono', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font('ComicMono NF', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
-  font = wezterm.font('ComicMono NF', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
+  -- font = wezterm.font('ComicMono NF', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("Comic Code Ligatures", {weight=250, stretch="Normal", style="Normal"}),
   -- font = wezterm.font("Comic Code Ligatures", {weight=250, stretch="Normal", style="Italic"}),
   -- font = wezterm.font("Comic Code Ligatures", {weight=265, stretch="Normal", style="Normal"}),
@@ -250,16 +250,16 @@ return {
   -- font = wezterm.font('MonoLisa Static-NoScript', { weight = 'Medium', stretch = 'Normal', style = 'Normal' }),
   -- font = wezterm.font("MonoLisa Static-NoScript", {weight="Medium", stretch="Normal", style="Italic"}),
   -- font = wezterm.font("MonoLisa Static-NoScript", {weight="DemiBold", stretch="Normal", style="Normal"}),
-  -- font = wezterm.font("MonoLisa Static-Script", {weight="Regular", stretch="Normal", style="Normal"}),
+  -- font = wezterm.font('MonoLisa Static-Script', { weight = 'Regular', stretch = 'Normal', style = 'Normal' }),
 
   -- COLOR SCHEMES
   -- color_scheme = 'Builtin Solarized Dark',
-  -- color_scheme = 'Obsidian',
+  color_scheme = 'Obsidian',
   -- color_scheme = "Gruvbox Dark",
   -- color_scheme = "OneHalfDark",
   -- color_scheme = 'Batman',
   -- color_scheme = 'Dracula',
-  color_scheme = 'shades-of-purple',
+  -- color_scheme = 'shades-of-purple',
   -- color_scheme = 'Dark Violet (base16)',
   -- color_scheme = default_color_scheme,
   -- color_scheme = 'Night Owl (Gogh)',
@@ -280,12 +280,12 @@ return {
   -- -- win32_acrylic_accent_color = '#2b2042',
   -- -- win32_acrylic_accent_color = '#11111B',
   -- -- win32_system_backdrop = 'Acrylic',
-  window_background_image = os.getenv 'USERPROFILE' .. '/AppData/Local/nvim/rsrc/bg/img60.png' or '',
-  window_background_image_hsb = {
-    brightness = 0.09,
-    hue = 1.0,
-    saturation = 1.0,
-  },
+  -- window_background_image = os.getenv 'USERPROFILE' .. '/AppData/Local/nvim/rsrc/bg/img60.png' or '',
+  -- window_background_image_hsb = {
+  --  brightness = 0.09,
+  --  hue = 1.0,
+  --  saturation = 1.0,
+  -- },
   -- image background enable end -------------------------------
   -- leaf
   use_fancy_tab_bar = false,

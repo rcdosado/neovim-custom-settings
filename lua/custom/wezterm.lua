@@ -43,6 +43,22 @@ local SUB_IDX = {
 }
 
 local uname = os.getenv 'username' .. '@' .. os.getenv 'computername'
+
+wezterm.on('toggle-dark-mode', function(window, pane)
+  local light_scheme = 'Builtin Solarized Light'
+  local dark_scheme = 'Builtin Solarized Dark'
+  local overrides = window:get_config_overrides() or {}
+  wezterm.log_info('Current color scheme is: ', overrides.color_scheme)
+  if overrides.color_scheme == light_scheme then
+    wezterm.log_info('Setting to Dark Scheme: ', overrides.color_scheme)
+    overrides.color_scheme = dark_scheme
+  else
+    wezterm.log_info('Setting to Light ', overrides.color_scheme)
+    overrides.color_scheme = light_scheme
+  end
+  window:set_config_overrides(overrides)
+end)
+
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
   local edge_background = '#121212'
   local background = '#4E4E4E'
@@ -165,7 +181,7 @@ return {
         },
       },
     },
-
+    { key = 'l', mods = 'CTRL', action = wezterm.action { EmitEvent = 'toggle-dark-mode' } },
     -- Set default key for font size shortcuts
     { key = '-', mods = 'CTRL|ALT', action = 'DecreaseFontSize' },
     { key = '=', mods = 'CTRL|ALT', action = 'IncreaseFontSize' },

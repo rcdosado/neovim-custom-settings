@@ -52,7 +52,7 @@ end
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('i', '<C-o>', '<Esc>o', { desc = 'Explicitly go to next line' })
 vim.keymap.set('i', '<M-,>', '<Esc>$a,<Esc>o', { desc = 'Add comma, newline' })
-vim.keymap.set('i', '<M-;>', '<Esc>$a;<Esc>o', { desc = 'Add semicolon, newline' })
+vim.keymap.set('i', '<M-;>', '<Esc>$a;<Esc>^', { desc = 'Add semicolon, go to first word' })
 vim.keymap.set('i', '<M-h>', '<BS>', { desc = '<Backspace>' })
 vim.keymap.set('i', '<M-l>', '<Del>', { desc = '<Delete>' })
 -- delete without yanking

@@ -146,6 +146,65 @@ return {
 
       -- NON BUILT-IN
 
+      -- brought you by claude 4 sonnet
+      -- Function to blink the current line multiple times
+      local function blink_current_line(times, duration)
+        times = times or 3
+        duration = duration or 100
+        
+        local line = vim.api.nvim_win_get_cursor(0)[1] - 1
+        local bufnr = vim.api.nvim_get_current_buf()
+        local ns_id = vim.api.nvim_create_namespace('blink_line')
+        
+        local function toggle_highlight(count)
+          if count <= 0 then return end
+          
+          -- Add highlight
+          vim.api.nvim_buf_add_highlight(bufnr, ns_id, 'Search', line, 0, -1)
+          
+          vim.defer_fn(function()
+            -- Remove highlight
+            vim.api.nvim_buf_clear_namespace(bufnr, ns_id, 0, -1)
+            
+            if count > 1 then
+              vim.defer_fn(function()
+                toggle_highlight(count - 1)
+              end, duration)
+            end
+          end, duration)
+        end
+        
+        toggle_highlight(times)
+      end
+
+      -- Updated function with customizable blink
+      local function create_position_mappings(position, blink_times, additional_mappings)
+        position = position or 'zt'
+        blink_times = blink_times or 2
+        
+        return function(prompt_bufnr, map)
+          local actions = require('telescope.actions')
+          
+          map('i', '<CR>', function()
+            actions.select_default(prompt_bufnr)
+            vim.cmd('normal! ' .. position)
+            blink_current_line(blink_times)
+          end)
+          
+          map('n', '<CR>', function()
+            actions.select_default(prompt_bufnr)
+            vim.cmd('normal! ' .. position)
+            blink_current_line(blink_times)
+          end)
+          
+          if additional_mappings then
+            additional_mappings(prompt_bufnr, map)
+          end
+          
+          return true
+        end
+      end
+
       vim.keymap.set('n', '<leader>th', '<cmd>Telescope themes<cr>', { desc = 'swi[T]ch t[H]emes' })
       vim.keymap.set('n', '<leader>se', '<cmd>Telescope persisted<cr>', { desc = '[S]earch s[E]ssions' })
       -- vim.keymap.set('n', '<leader>dh', '<cmd>Telescope heading<cr>', { desc = '[D]isplay [H]eading' })
@@ -156,8 +215,10 @@ return {
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
           winblend = 10,
           previewer = false,
+          -- after line is found, automatically press this key and blink thrice
+         attach_mappings = create_position_mappings('zz'),
         })
-      end, { desc = '[/] Fuzzily search in current buffer' })
+      end, { desc = '[<leader>/] Fuzzily search in current buffer' })
 
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -165,6 +226,7 @@ return {
         builtin.live_grep {
           grep_open_files = true,
           prompt_title = 'Live Grep in Open Files',
+          attach_mappings = create_position_mappings('zz'),
         }
       end, { desc = '[S]earch [/] in Open Files' })
 

@@ -236,11 +236,11 @@ return {
       end, { desc = '[S]earch [N]eovim files' })
 
       vim.keymap.set('n', '<leader>cs', function()
-        builtin.live_grep { search_dirs = { 'c:/dev/codes' }, shorten_path = true, nowait = true }
+        builtin.live_grep { search_dirs = { 'c:/dev/codes/~' }, shorten_path = true, nowait = true }
       end, { desc = '[C]ode [S]earch' })
 
       vim.keymap.set('n', '<leader>cf', function()
-        builtin.find_files { search_dirs = { 'c:/dev/codes' }, shorten_path = true, nowait = true }
+        builtin.find_files { search_dirs = { 'c:/dev/codes/~' }, shorten_path = true, nowait = true }
       end, { desc = '[C]ode [F]iles find' })
     end,
   },

@@ -74,7 +74,7 @@ require('lazy').setup({
 
   -- require 'custom/plugins/nvim-bufdel',
 
-  require 'custom/plugins/nvim-neotest',
+  -- require 'custom/plugins/nvim-neotest',
 
   -- require 'custom/plugins/goto-preview',
 
@@ -111,6 +111,8 @@ require('lazy').setup({
   require 'custom/plugins/nvim-autopairs',
 
   require 'custom/plugins/visual-split',
+
+  require 'custom/plugins/vim-test',
 
 
 

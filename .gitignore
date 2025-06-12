@@ -2,8 +2,8 @@ tags
 test.sh
 .luarc.json
 nvim
-lua/current-theme.lua
 lua/custom/wezterm.lua
 spell/
 env/
 lazy-lock.json
+lua/current-theme.lua
